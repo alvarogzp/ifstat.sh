@@ -1,6 +1,6 @@
 # ifstat.sh
 
-ifstat.sh is a shell command to report network interface bandwith, like vmstat/iostat do for other system counters.
+ifstat.sh is a shell command to report network interface bandwidth, like vmstat/iostat do for other system counters.
 It works by printing the current bandwidth at regular intervals. It also has several options to configure it.
 
 ifstat.sh is an [ifstat](http://freecode.com/projects/ifstat) alternative completely written in bash.
