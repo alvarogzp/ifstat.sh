@@ -462,7 +462,6 @@ bucle()
 			dormir=$(echo "$ESCALA_BC; $dormirns / $NANOSEGUNDOS" | bc) # Convertir tiempo a segundos
 			tiemporeal=$tiempo # Ya que se duerme para que el tiempo del ciclo sea $tiempo, el tiempo real tenderá a $tiempo
 		fi
-		#echo $dormir $tiemporeal ${actual[@]}
 	done
 }
 
