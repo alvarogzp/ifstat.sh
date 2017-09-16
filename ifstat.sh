@@ -3,6 +3,11 @@
 # Mide el tráfico de las interfaces elegidas
 #
 #
+# Este script es una alternativa a ifstat(1) completamente escrito en bash.
+# Está optimizado para tener el mínimo número de llamadas a comandos externos,
+# de forma que se ejecute lo más rápidamente posible.
+#
+#
 # Salida por pantalla:
 # Primero se muestra el título, compuesto por una línea separadora, otra con las
 # interfaces que se están monitorizando (cada una en su columna), otra con la
