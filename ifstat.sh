@@ -1,3 +1,4 @@
+#! /bin/bash
 #
 # Mide el tráfico de las interfaces elegidas
 #
