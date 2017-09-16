@@ -210,15 +210,14 @@ multiplos()
 	local decimales="0" # Iniciar decimales a cero
 	while [ $valor -gt $cantidadmaxima ] # Mientras el valor sea mayor de la cantidad maxima
 	do # Pasar al siguiente múltiplo
-		decimales=$valor #$((($valor * 10000 / 1024) % 10000)) # Calcular nuevos decimales
+		decimales=$valor # Para calcular los nuevos decimales
 		valor=$(($valor / 1024)) # Calcular nuevo valor
 		i+=1 # Incrementar i (representación del múltiplo)
 	done
 	echo -n $valor # Mostrar parte entera
-	if [ $i -gt 0 ] && [ ${valor} -lt 100 ] # Si el índice es mayor que cero y la parte entera menor de 1000
+	if [ $i -gt 0 ] && [ ${valor} -lt 100 ] # Si el índice es mayor que cero y la parte entera menor de 100
 	then
 		printf ".%.$((3-${#valor}))s" $(printf "%02i" $((($decimales * 100 / 1024 ) % 100 ))) # Mostrar decimales
-		#echo -n ".$decimales" # Mostrar decimales
 	fi
 	echo ${VECTOR_MULTIPLOS[$i]} # Añadir unidades
 }
