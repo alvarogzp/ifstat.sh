@@ -390,7 +390,7 @@ bucle()
 	tiempoanterior=$(date +%s%N) # Iniciar tiempo anterior al actual
 	tiempoprimeralectura=$tiempoanterior # Tiempo de inicio
 	
-	trap "fin" 2 # Captura Control+C
+	trap "fin" 1 2 3 15 # Captura cierre (HUP), Control+C (INT) y exit (QUIT y TERM)
 	
 	while true
 	do
@@ -462,7 +462,7 @@ bucle()
 # Muestra estadísticas finales
 fin()
 {
-	trap "" 2 # Quitar captura
+	trap "" 1 2 3 15 # Quitar captura e ignorar señales
 	echo # Nueva línea (por si la otra no está finalizada)
 	echo
 	# ÚLTIMA LECTURA
