@@ -399,9 +399,9 @@ bucle()
 	primera=(${antes[@]}) # Guardar también en $primera, para calcular totales
 	tiempoanterior=$(date +%s%N) # Iniciar tiempo anterior al actual
 	tiempoprimeralectura=$tiempoanterior # Tiempo de inicio
-	
+
 	trap "fin" 1 2 3 15 # Captura cierre (HUP), Control+C (INT) y exit (QUIT y TERM)
-	
+
 	while true
 	do
 		# DESCANSO
