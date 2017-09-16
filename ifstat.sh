@@ -49,6 +49,7 @@ FICHEROINTERFACES="/proc/net/dev" # Fichero con información sobre las interface
 INTERFACES=$(echo $(awk 'BEGIN { FS=":" } /^ *[a-zA-Z0-9]+:/ { print $1 }' $FICHEROINTERFACES)) # Interfaces existentes
 
 # Valores por defecto:
+cantidadmaxima=1024 # Cantidad máxima que mostrar en los datos antes de pasar a un múltiplo superior
 tiempo=1 # Actualización de los datos (en segundos)
 tiempomostrartitulo=60 # Mostrar de nuevo interfaces y columnas (en segundos)
 interfaz="" # Interfaces seleccionadas
@@ -207,16 +208,17 @@ multiplos()
 	declare -i i=0 # Declarar i como entero e iniciar a cero (Byte)
 	local valor=$1 # Iniciar valor a los bytes a convertir
 	local decimales="0" # Iniciar decimales a cero
-	while [ $valor -gt 1024 ] # Mientras el valor sea mayor de 1024
+	while [ $valor -gt $cantidadmaxima ] # Mientras el valor sea mayor de la cantidad maxima
 	do # Pasar al siguiente múltiplo
-		decimales=$((($valor * 10 / 1024) % 10)) # Calcular nuevos decimales
+		decimales=$valor #$((($valor * 10000 / 1024) % 10000)) # Calcular nuevos decimales
 		valor=$(($valor / 1024)) # Calcular nuevo valor
 		i+=1 # Incrementar i (representación del múltiplo)
 	done
 	echo -n $valor # Mostrar parte entera
-	if [ $i -gt 0 ] # Si el índice es mayor que cero
+	if [ $i -gt 0 ] && [ ${valor} -lt 100 ] # Si el índice es mayor que cero y la parte entera menor de 1000
 	then
-		echo -n ".$decimales" # Mostrar decimales
+		printf ".%.$((3-${#valor}))s" $(printf "%02i" $((($decimales * 100 / 1024 ) % 100 ))) # Mostrar decimales
+		#echo -n ".$decimales" # Mostrar decimales
 	fi
 	echo ${VECTOR_MULTIPLOS[$i]} # Añadir unidades
 }
