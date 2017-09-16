@@ -14,21 +14,22 @@
 # leyenda de las columnas (recibido y enviado) y otra separadora para finalizar
 # el título.
 #
-# Después se muestran los datos, con una línea cada actualización. Para cada interfaz
-# se muestran los datos enviados y recibidos durante el último intervalo. Todos
-# los datos están en bytes, y se acompañan de una letra indicando su múltiplo
-# (B para byte, K para kilobyte, M para megabyte, G para gigabyte, T para terabyte)
-# siempre en potencias de 1024 bytes.
-# Cuando una interfaz siendo monitorizada deja de existir mientras el programa se
-# está ejecutando, su columna se muestra vacía, sin número ni múltiplo.
+# Después se muestran los datos, con una línea cada actualización. Para cada
+# interfaz se muestran los datos enviados y recibidos durante el último
+# intervalo. Todos los datos están en bytes, y se acompañan de una letra
+# indicando su múltiplo (B para byte, K para kilobyte, M para megabyte, G para
+# gigabyte, T para terabyte) siempre en potencias de 1024 bytes.
+# Cuando una interfaz siendo monitorizada deja de existir mientras el programa
+# se está ejecutando, su columna se muestra vacía, sin número ni múltiplo.
 #
-# Al pulsar Control+C (o enviar una señal de interrupción), se detiene la monitorización
-# y se muestra un breve resumen de actividad de las interfaces monitorizadas durante
-# la ejecución. En este resumen, las columnas que antes eran verticales ahora se
-# vuelven horizontales (interfaces, y de cada una bytes recibidos y enviados),
-# y en las verticales se encuentra el total de bytes intercambiados durante la ejecución,
-# la media de intercambio por segundo, y la cantidad de bytes correspondiente al máximo
-# y mínimo valor capturado durante la ejecución.
+# Al pulsar Control+C (o enviar una señal de interrupción), se detiene la
+# monitorización y se muestra un breve resumen de actividad de las interfaces
+# monitorizadas durante la ejecución. En este resumen, las columnas que antes
+# eran verticales ahora se vuelven horizontales (interfaces, y de cada una
+# bytes recibidos y enviados), y en las verticales se encuentra el total de
+# bytes intercambiados durante la ejecución, la media de intercambio por
+# segundo, y la cantidad de bytes correspondiente al máximo y mínimo valor
+# capturado durante la ejecución.
 # Se finaliza con una suma de los bytes intercambiados por todas las interfaces,
 # recibido y enviado por separado, y todo junto para terminar.
 # El resumen acaba mostrando el tiempo que ha durado la monitorización.
