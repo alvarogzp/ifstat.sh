@@ -308,8 +308,6 @@ interfazrecibidoyenviado()
 		vector=(${nuevovector[@]}) # Copiar nuevo vector al antiguo
 	fi
 	echo ${vector[@]} # Devolver vector
-	#linea=$(ifconfig $1 | grep -i bytes) # Extraer línea con los bytes
-	#echo $(echo $linea | cut -d: -f2 | cut -d' ' -f1) $(echo $linea | cut -d: -f3 | cut -d' ' -f1) # Extraer bytes recibidos y enviados, y enviar separados por un espacio
 }
 
 # Devuelve [recibido enviado] a partir de [interfaz:recibido|enviado]
