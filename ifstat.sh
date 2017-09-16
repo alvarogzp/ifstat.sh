@@ -171,13 +171,6 @@ mostrartitulo()
 		echo -n "|" # Inicio
 		for in in $interfaz # Recorrer interfaces
 		do
-			local iw=$(iwconfig $in 2> /dev/null | grep "ESSID")
-			if [ -n "$iw" ]
-			then
-				local iw1="${iw#*ESSID\:\"}"
-				local iw2="${iw1%\"*}"
-				in="$in^$iw2"
-			fi
 			ponerenmedioizquierda "$in" 15 # Poner interfaz
 			echo -n "|" # Añadir separador
 		done
