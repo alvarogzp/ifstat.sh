@@ -8,7 +8,8 @@
 # de forma que se ejecute lo más rápidamente posible.
 #
 #
-# Salida por pantalla:
+# Formato de la salida:
+#
 # Primero se muestra el título, compuesto por una línea separadora, otra con las
 # interfaces que se están monitorizando (cada una en su columna), otra con la
 # leyenda de las columnas (recibido y enviado) y otra separadora para finalizar
@@ -36,13 +37,15 @@
 #
 #
 # Nota:
-# Este script sólo está probado en bash 4.2.8.
+#
+# Este script sólo está probado en bash 4.2.8 y posteriores versiones.
 # El intérprete dash(1) (correspondiente al comando /bin/sh en algunos
 # sistema) falla al interpretar el script, ya que en este script se usan
 # Vectores propios de bash.
 #
 #
 # Licencia:
+#
 # GPL, visita: http://www.fsf.org/licenses/gpl para ver el texto legal.
 #
 
