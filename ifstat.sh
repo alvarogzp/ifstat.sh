@@ -99,14 +99,6 @@ comprobarnumerodecimalpositivo()
 comprobarinterfaz()
 {
 	[[ $INTERFACES =~ (^| )$1( |$) ]] # Devuelve true si $1 es una de las palabras separadas por espacios de $INTERFACES
-	#for if in $INTERFACES # Recorrer interfaces existentes
-	#do
-	#	if [ $1 == $if ] # Si son iguales
-	#	then
-	#		return 0 # Existe
-	#	fi
-	#done
-	#return 1 # No existe
 }
 
 # Devuelve un tiempo formateado a partir de uno en segundos
@@ -621,9 +613,6 @@ do
 			opcionhora=1 # Crear variable
 			;;
 		* ) # Otro valor (interfaz)
-			#if [ $# -eq 1 ] && comprobarnumerodecimalpositivo $1 # Si no hay más parámetros y es un número incluso decimal
-			#then
-			#	tiempo=$1 # Asignar tiempo
 			interfaz+=" " # Añadir el espacio, para saber que se indicó interfaz
 			if comprobarinterfaz $1 # Comprobar si existe la interfaz
 			then
