@@ -42,7 +42,7 @@
 
 
 # Valores fijos:
-VECTOR_MULTIPLOS=("B" "K" "M" "G" "T") # Representaciones de los múltiplos (Byte, Kilobyte, Megabyte, Gigabyte y Terabyte)
+VECTOR_MULTIPLOS=("B" "K" "M" "G" "T" "P" "E" "Z" "Y") # Representaciones de los múltiplos (Byte, Kilobyte, Megabyte, Gigabyte, Terabyte, Petabyte, Exabyte, Zettabyte y Yottabyte)
 ESCALA_BC="scale=2" # Escala para las divisiones con bc (time no tiene más precisión que 2 decimales)
 NANOSEGUNDOS=1000000000 # Nanosegundos que tiene un segundo
 FICHEROINTERFACES="/proc/net/dev" # Fichero con información sobre las interfaces
